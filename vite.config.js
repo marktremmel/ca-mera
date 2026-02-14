@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite';
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   root: '.',
-  base: '/ca-mera/',
+  base: mode === 'production' ? '/ca-mera/' : '/',
   build: {
     outDir: 'dist',
   },
@@ -10,4 +10,4 @@ export default defineConfig({
     port: 5173,
     host: true,
   },
-});
+}));
